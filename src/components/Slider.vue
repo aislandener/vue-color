@@ -13,6 +13,9 @@
           :class="{'vc-slider-swatch-picker--active': offset == activeOffset, 'vc-slider-swatch-picker--white': offset === '1'}"
           :style="{background: 'hsl(' + colors.hsl.h + ', 100%, ' + (offset * 100) + '%)'}"
         ></div>
+        <div class="vc-slider-alpha-wrap" v-if="!disableAlpha">
+          <alpha v-model="colors" @change="hueChange"></alpha>
+        </div>
       </div>
     </div>
   </div>
@@ -21,6 +24,7 @@
 <script>
 import colorMixin from '../mixin/color'
 import hue from './common/Hue.vue'
+import alpha from './common/Alpha.vue'
 
 export default {
   name: 'Slider',
@@ -31,10 +35,15 @@ export default {
       default () {
         return ['.80', '.65', '.50', '.35', '.20']
       }
+    },
+    disableAlpha: {
+      type: Boolean,
+      default: false
     }
   },
   components: {
-    hue
+    hue,
+    alpha
   },
   computed: {
     activeOffset () {
