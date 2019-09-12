@@ -13,11 +13,11 @@
           :class="{'vc-slider-swatch-picker--active': offset == activeOffset, 'vc-slider-swatch-picker--white': offset === '1'}"
           :style="{background: 'hsl(' + colors.hsl.h + ', 100%, ' + (offset * 100) + '%)'}"
         ></div>
-        <div class="vc-slider-alpha-wrap" v-if="!disableAlpha">
-          <alpha v-model="colors" @change="hueChange"></alpha>
-        </div>
       </div>
     </div>
+      <div class="vc-slider-alpha-wrap" v-if="!disableAlpha">
+          <alpha v-model="colors" @change="hueChange"></alpha>
+      </div>
   </div>
 </template>
 
@@ -129,4 +129,22 @@ export default {
 .vc-slider-swatch-picker--active.vc-slider-swatch-picker--white {
   box-shadow: inset 0 0 0 0.6px #ddd;
 }
+.vc-slider-alpha-wrap {
+    position: relative;
+    height: 10px;
+    margin-top: 20px;
+}
+.vc-slider-alpha-wrap .vc-alpha-gradient {
+    border-radius: 2px;
+}
+
+.vc-slider-alpha-wrap .vc-alpha-picker {
+    width: 12px;
+    height: 12px;
+    border-radius: 6px;
+    transform: translate(-6px, -2px);
+    background-color: rgb(248, 248, 248);
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.37);
+}
+
 </style>

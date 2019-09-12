@@ -4078,7 +4078,7 @@ exports = module.exports = __webpack_require__(0)(false);
 
 
 // module
-exports.push([module.i, "\n.vc-slider {\r\n  position: relative;\r\n  width: 410px;\n}\n.vc-slider-hue-warp {\r\n  height: 12px;\r\n  position: relative;\n}\n.vc-slider-hue-warp .vc-hue-picker {\r\n  width: 14px;\r\n  height: 14px;\r\n  border-radius: 6px;\r\n  transform: translate(-7px, -2px);\r\n  background-color: rgb(248, 248, 248);\r\n  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.37);\n}\n.vc-slider-swatches {\r\n  display: flex;\r\n  margin-top: 20px;\n}\n.vc-slider-swatch {\r\n  margin-right: 1px;\r\n  flex: 1;\r\n  width: 20%;\n}\n.vc-slider-swatch:first-child {\r\n  margin-right: 1px;\n}\n.vc-slider-swatch:first-child .vc-slider-swatch-picker {\r\n  border-radius: 2px 0px 0px 2px;\n}\n.vc-slider-swatch:last-child {\r\n  margin-right: 0;\n}\n.vc-slider-swatch:last-child .vc-slider-swatch-picker {\r\n  border-radius: 0px 2px 2px 0px;\n}\n.vc-slider-swatch-picker {\r\n  cursor: pointer;\r\n  height: 12px;\n}\n.vc-slider-swatch-picker--active {\r\n  transform: scaleY(1.8);\r\n  border-radius: 3.6px/2px;\n}\n.vc-slider-swatch-picker--white {\r\n  box-shadow: inset 0 0 0 1px #ddd;\n}\n.vc-slider-swatch-picker--active.vc-slider-swatch-picker--white {\r\n  box-shadow: inset 0 0 0 0.6px #ddd;\n}\r\n", ""]);
+exports.push([module.i, "\n.vc-slider {\r\n  position: relative;\r\n  width: 410px;\n}\n.vc-slider-hue-warp {\r\n  height: 12px;\r\n  position: relative;\n}\n.vc-slider-hue-warp .vc-hue-picker {\r\n  width: 14px;\r\n  height: 14px;\r\n  border-radius: 6px;\r\n  transform: translate(-7px, -2px);\r\n  background-color: rgb(248, 248, 248);\r\n  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.37);\n}\n.vc-slider-swatches {\r\n  display: flex;\r\n  margin-top: 20px;\n}\n.vc-slider-swatch {\r\n  margin-right: 1px;\r\n  flex: 1;\r\n  width: 20%;\n}\n.vc-slider-swatch:first-child {\r\n  margin-right: 1px;\n}\n.vc-slider-swatch:first-child .vc-slider-swatch-picker {\r\n  border-radius: 2px 0px 0px 2px;\n}\n.vc-slider-swatch:last-child {\r\n  margin-right: 0;\n}\n.vc-slider-swatch:last-child .vc-slider-swatch-picker {\r\n  border-radius: 0px 2px 2px 0px;\n}\n.vc-slider-swatch-picker {\r\n  cursor: pointer;\r\n  height: 12px;\n}\n.vc-slider-swatch-picker--active {\r\n  transform: scaleY(1.8);\r\n  border-radius: 3.6px/2px;\n}\n.vc-slider-swatch-picker--white {\r\n  box-shadow: inset 0 0 0 1px #ddd;\n}\n.vc-slider-swatch-picker--active.vc-slider-swatch-picker--white {\r\n  box-shadow: inset 0 0 0 0.6px #ddd;\n}\n.vc-slider-alpha-wrap {\r\n    position: relative;\r\n    height: 10px;\r\n    margin-top: 20px;\n}\n.vc-slider-alpha-wrap .vc-alpha-gradient {\r\n    border-radius: 2px;\n}\n.vc-slider-alpha-wrap .vc-alpha-picker {\r\n    width: 12px;\r\n    height: 12px;\r\n    border-radius: 6px;\r\n    transform: translate(-6px, -2px);\r\n    background-color: rgb(248, 248, 248);\r\n    box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.37);\n}\r\n\r\n", ""]);
 
 // exports
 
@@ -4399,31 +4399,31 @@ var render = function() {
                   background:
                     "hsl(" + _vm.colors.hsl.h + ", 100%, " + offset * 100 + "%)"
                 }
-              }),
-              _vm._v(" "),
-              !_vm.disableAlpha
-                ? _c(
-                    "div",
-                    { staticClass: "vc-slider-alpha-wrap" },
-                    [
-                      _c("alpha", {
-                        on: { change: _vm.hueChange },
-                        model: {
-                          value: _vm.colors,
-                          callback: function($$v) {
-                            _vm.colors = $$v
-                          },
-                          expression: "colors"
-                        }
-                      })
-                    ],
-                    1
-                  )
-                : _vm._e()
+              })
             ]
           )
         })
-      )
+      ),
+      _vm._v(" "),
+      !_vm.disableAlpha
+        ? _c(
+            "div",
+            { staticClass: "vc-slider-alpha-wrap" },
+            [
+              _c("alpha", {
+                on: { change: _vm.hueChange },
+                model: {
+                  value: _vm.colors,
+                  callback: function($$v) {
+                    _vm.colors = $$v
+                  },
+                  expression: "colors"
+                }
+              })
+            ],
+            1
+          )
+        : _vm._e()
     ]
   )
 }
