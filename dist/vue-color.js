@@ -644,6 +644,10 @@ exports.default = {
     disableAlpha: {
       type: Boolean,
       default: false
+    },
+    disableLumi: {
+      type: Boolean,
+      default: false
     }
   },
   components: {
@@ -2888,17 +2892,24 @@ var render = function() {
               }
             },
             [
-              _c("div", {
-                staticClass: "vc-slider-swatch-picker",
-                class: {
-                  "vc-slider-swatch-picker--active": offset == _vm.activeOffset,
-                  "vc-slider-swatch-picker--white": offset === "1"
-                },
-                style: {
-                  background:
-                    "hsl(" + _vm.colors.hsl.h + ", 100%, " + offset * 100 + "%)"
-                }
-              })
+              !_vm.disableLumi
+                ? _c("div", {
+                    staticClass: "vc-slider-swatch-picker",
+                    class: {
+                      "vc-slider-swatch-picker--active":
+                        offset == _vm.activeOffset,
+                      "vc-slider-swatch-picker--white": offset === "1"
+                    },
+                    style: {
+                      background:
+                        "hsl(" +
+                        _vm.colors.hsl.h +
+                        ", 100%, " +
+                        offset * 100 +
+                        "%)"
+                    }
+                  })
+                : _vm._e()
             ]
           )
         })
