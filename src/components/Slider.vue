@@ -12,6 +12,7 @@
           class="vc-slider-swatch-picker"
           :class="{'vc-slider-swatch-picker--active': offset == activeOffset, 'vc-slider-swatch-picker--white': offset === '1'}"
           :style="{background: 'hsl(' + colors.hsl.h + ', 100%, ' + (offset * 100) + '%)'}"
+          v-if="!disableLumi"
         ></div>
       </div>
     </div>
@@ -37,6 +38,10 @@ export default {
       }
     },
     disableAlpha: {
+      type: Boolean,
+      default: false
+    },
+    disableLumi: {
       type: Boolean,
       default: false
     }
